@@ -8,7 +8,7 @@ const basicFetch = async (endpoint) => {
     return json;
 }
 
-export default {
+export const Tmdb = {
     getHomeList: async () => {
         return [
             {
