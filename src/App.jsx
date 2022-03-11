@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Tmdb} from './Tmdb';
+import {Tmdb} from './service/Tmdb';
 
 import { MovieRow } from './components/MovieRow';
 import { FeatureMovie } from './components/FeatureMovie';
@@ -26,7 +26,7 @@ import './styles/globals.scss';
       let chosenInfo = await Tmdb.getMovieInfo(chosen.id, 'tv');
       setFeatureData(chosenInfo);
     }
-    
+
     loadAll();
   }, []);
 
@@ -50,7 +50,7 @@ import './styles/globals.scss';
     <div className='page'>
       <Header black={blackHeader} />
       {
-        featureData && 
+        featureData &&
           <FeatureMovie item={featureData} />
       }
       <section className='lists'>
